@@ -1,0 +1,210 @@
+body{
+    background-color: #242333;
+    color: #ffffff;
+    font-family: 'Karla', sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+/* #01B0D3 7 6*/
+
+button{
+    font-family: 'Karla', sans-serif;
+    background-color: #c8d301;
+    border-radius: 6px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;    
+}
+
+button:active{
+    background-color: #87b026;
+}
+
+
+
+header{
+    margin: 0 20px;
+    display: flex;
+    transition: 0.3s;    
+}
+
+
+
+/* Slides header to the side, when menu opens */
+header h3{
+    width: 100%;
+   
+}
+
+.list-symbol{
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 10px;
+    transition: 0.3s;
+    align-self: center;
+}
+
+.list-symbol:hover{
+    background-color: #3d3a67;
+   
+}
+
+/* Rotates symbol when clicked */
+.list-symbol-rotate{
+    transform:  translateX(-300px) rotate(-90deg);
+}
+
+.list-symbol li{
+    
+    height: 5px;
+    border-bottom: 2px solid #fff;
+}
+
+.side-menu{
+    position: absolute;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    min-width: 300px;
+    background-color: #3d3a67;
+    color: #fff;
+    font-weight: 200;
+    transition: 0.3s;
+  
+    
+    
+}
+
+/* Add open style to side menu, used in Javascript */
+.side-menu-open{
+    right: 0;
+    
+}
+
+.menu{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+   
+}
+
+.menu li{
+    border: 1px solid #242333;
+    min-height: 25px;
+}
+
+.menu li:hover, .active{
+    background-color: #494584;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+}
+
+#hero-image{
+    background-image: url("images/hero-banner.jpg");
+    height: 600px;
+    background-size: 100%;
+    background-position: center 40%;
+    
+    
+}
+
+#hero-overlay{
+    background: rgba(36, 35, 51, 0.3);
+    height: 100%;
+    z-index: 2;
+    padding-top: 100px;
+    text-shadow: 3px 3px #000;
+}
+
+#hero-overlay h1{
+    font-size: 4em;
+}
+
+#hero-overlay h2{
+    font-size: 2em;
+}
+
+.divider{
+    margin-top: 0;
+    margin-bottom: 100px;
+    padding: 30px;
+    background-color: #14131b;
+}
+
+
+.div-left, .div-right{
+    background-color: #fff;
+    height: 600px;
+    width: 700px;
+    margin-left: 18%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #14131b;
+    
+}
+
+.div-right{
+    margin-left: 42%;   
+}
+
+
+.inner-text{
+    padding: 0 50px;
+    width: 60%;
+    text-align: left;  
+}
+
+.inner-text h3{
+    text-align: center;  
+}
+
+.inner-text ul{
+    font-size: 1.5em;
+    text-align-last: justify;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    line-height: 1.6em;
+}
+
+#inner-image1{
+    min-width: 40%;
+    height: 100%;
+    background-image: url("images/Emil1.jpg");
+    background-position: 37% center;
+    background-size: cover;
+}
+
+#inner-bg{
+    min-width: 40%;
+    height: 100%;
+    background-color: #14131b;
+}
+
+#inner-bg h2{
+    color:#fff;
+    position: relative;
+    top: 40%; 
+    
+}
+
+
+footer{
+    background-color: #14131b;
+    height: 100px;
+    margin-top: 100px;
+    border-top: 2px solid #494584;
+}
