@@ -1,0 +1,136 @@
+body{
+    width: 100%;
+    background-color: #245025;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: 'Anonymous Pro', monospace;
+    color: white;
+}
+
+#before-screen{
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    z-index: 1;
+    top:30%;
+    font-size: 32px;
+}
+
+#credits{
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+}
+
+#credits a{
+    color: white;
+    font-size: 16px;
+}
+
+ol{
+    text-align: left;
+    padding-left: 40%;
+}
+
+button{
+    font-family: 'Anonymous Pro', monospace;
+    background-color: #473c9c;
+    color: white;
+    font-size: 20px;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+}
+
+#player-div{
+    margin-top: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn-group{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 0;
+}
+
+#btn-group button{
+    width: 200px;
+    height: 75px;
+}
+
+#btn-group button:hover{
+    background-color: #a41313;
+}
+
+#attack-btn, #roll-dice-btn, #before-screen button{
+    background-color:#a41313;
+    height: 50px;
+    width: 150px;
+}
+
+#attack-btn:hover, #roll-dice-btn:hover, #before-screen button:hover{
+    background-color: #d91f1f;
+}
+
+#player-group{
+    order:2;
+}
+
+#div-right{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+#dice{
+    width: 120px;
+    height: 120px;
+    transform: translateX(-60px);
+}
+
+#stats{
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-180px);
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 span{
+    color: black;
+    background-color: #3d803d;
+    padding: 5px 20px;
+}
+
+h3{
+    border-radius: 200px;
+    width: 150px;
+    height:150px;
+    line-height: 150px;
+    background-color: #a41313;
+    font-size: 26px;
+}
+
+h4{
+    border-radius: 200px;
+    width: 100px;
+    height:100px;
+    line-height: 100px;
+    background-color: #473c9c;
+    font-size: 20px;
+}
+
+#enemy-hp{
+    font-size: 26px;
+}
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>FightGame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=IBM+Plex+Mono&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="Stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="before-screen">
+        <h1>Rules</h1>
+        <ol>
+            <li>First roll the dice</li>
+            <li>Activate skills if you want</li>
+            <li>Then attack!</li>
+        </ol>
+        <button id="start-btn">START GAME</button>
+        <div id="credits">
+            <a href="https://www.flaticon.com/free-icons/warrior" title="warrior icons">Warrior icons created by max.icons - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/knight" title="knight icons">Knight icons created by Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Smashicons - Flaticon</a>
+        </div>
+    </div>
+    <main id="main">
+        <h1><span>Boros the destroyer</span></h1>
+        <img src="images/knight.png" alt="Knight Character">
+        <p id="enemy-hp"></p>
+
+    <div id="player-div">
+        <div id="btn-group">
+            <button id="skill1">Block next hit</button>
+            <button id="skill2">Double damage</button>
+            <button id="skill3">Heal for damage</button>
+            <button id="skill4">Last Breathe</button>
+        </div>
+        <div id="player-group">
+            <img src="images/swordsman.png" alt="Swordsman Character">
+            <h1><span>Player</span></h1>
+            <button id="attack-btn">ATTACK</button>
+            <button id="roll-dice-btn">Roll dice</button>
+        </div>
+        
+        <div id="div-right">
+            <img id="dice" src="images/dice-1.png" alt="Dice-1">
+            <div id="stats">
+                <h3>HP</h3>
+                <h4>Mana</h4>
+            </div>
+        </div>
+        
+    </div>
+    </main>
+    
+
+       
+    <script src="index.js"></script>
+</body>
+</html>
