@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emil's Birthday · Taipei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-red:    #D63C2F;
+      --primary-gold:   #F2A83B;
+      --accent-gold:    #F5D87E;
+      --accent-green:   #3E8C5F;
+      --bg-blue:        #4B7FAD;
+      --bg-purple:      #7E5FA6;
+      --muted:          #E8D5B7;
+      --text-primary:   #1A1210;
+      --text-secondary: #5C4A3A;
+      --text-on-dark:   #F5EFE6;
+      --dark:           #100C0B;
+      --dark-surface:   #1C1614;
+      --dark-card:      #221A18;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: var(--text-on-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    header {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(16,12,11,0.1) 0%, rgba(16,12,11,0.85) 100%),
+        url("assets/taipei_bg.jpg") center/cover no-repeat;
+    }
+
+    /* Decorative top bar */
+    .hero-top-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-red), var(--primary-gold), var(--accent-gold));
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 0 8% 5rem;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta span {
+      margin: 0 0.5rem;
+      opacity: 0.5;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text-on-dark);
+      margin-bottom: 2rem;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      background: var(--primary-red);
+      color: var(--text-on-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: #bf3428;
+      transform: translateY(-2px);
+    }
+
+    /* Decorative lantern dots */
+    .lanterns {
+      position: absolute;
+      top: 1.5rem;
+      right: 8%;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-end;
+    }
+
+    .lantern {
+      width: 16px;
+      border-radius: 50% 50% 40% 40%;
+      background: var(--primary-red);
+      opacity: 0.85;
+      animation: lanternSway 3s ease-in-out infinite;
+    }
+    .lantern:nth-child(1) { height: 28px; animation-delay: 0s; }
+    .lantern:nth-child(2) { height: 36px; animation-delay: 0.4s; background: var(--primary-gold); }
+    .lantern:nth-child(3) { height: 24px; animation-delay: 0.8s; }
+    .lantern:nth-child(4) { height: 32px; animation-delay: 0.2s; background: var(--accent-gold); }
+
+    @keyframes lanternSway {
+      0%, 100% { transform: rotate(-4deg); }
+      50%       { transform: rotate(4deg); }
+    }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+    section {
+      padding: 5rem 8%;
+      border-top: 1px solid rgba(245,239,230,0.06);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-on-dark);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(242,168,59,0.2);
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    /* ── CARDS ───────────────────────────────────────────── */
+    .card {
+      background: var(--dark-card);
+      border: 1px solid rgba(245,239,230,0.08);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+    }
+
+    .card p { color: rgba(245,239,230,0.8); margin-bottom: 0.5rem; }
+    .card p.intro { margin-bottom: 1.5rem; }
+
+    /* ── INFO GRID ───────────────────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0;
+    }
+
+    .info-tile {
+      background: var(--dark-card);
+      border: 1px solid rgba(245,239,230,0.08);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .info-tile-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .info-tile-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-tile-value {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-on-dark);
+    }
+
+    /* ── LISTS ───────────────────────────────────────────── */
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.55rem 0;
+      color: rgba(245,239,230,0.82);
+      border-bottom: 1px solid rgba(245,239,230,0.05);
+      font-size: 0.95rem;
+    }
+
+    li:last-child { border-bottom: none; }
+
+    li b {
+      color: var(--text-on-dark);
+      font-weight: 500;
+    }
+
+    li i {
+      color: rgba(245,239,230,0.5);
+      font-size: 0.88rem;
+    }
+
+    /* ── AWARDS ──────────────────────────────────────────── */
+    .awards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .award-pill {
+      background: rgba(242,168,59,0.1);
+      border: 1px solid rgba(242,168,59,0.25);
+      color: var(--accent-gold);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* ── FINALE ──────────────────────────────────────────── */
+    .finale-banner {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, var(--primary-red) 0%, #a02a20 100%);
+      border-radius: 12px;
+      padding: 1.25rem 1.75rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-on-dark);
+    }
+
+    /* ── POINT BADGES ────────────────────────────────────── */
+    li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .li-text { flex: 1; min-width: 0; }
+
+    .pts {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 999px;
+      padding: 2px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pts-easy   { background: rgba( 62,140, 95,0.18); color: #7ecf9e; border: 1px solid rgba(62,140,95,0.3); }
+    .pts-med    { background: rgba(242,168, 59,0.15); color: #F2A83B; border: 1px solid rgba(242,168,59,0.3); }
+    .pts-hard   { background: rgba(214, 60, 47,0.15); color: #e87c73; border: 1px solid rgba(214,60,47,0.3); }
+    .pts-legend { background: rgba(126, 95,166,0.18); color: #c4a0e8; border: 1px solid rgba(126,95,166,0.3); }
+
+    /* ── QUIZ ────────────────────────────────────────────── */
+    .quiz-list li {
+      padding: 0.8rem 0;
+    }
+
+    /* ── PLAYLIST ────────────────────────────────────────── */
+    .playlist-note {
+      color: rgba(245,239,230,0.6);
+      font-size: 0.9rem;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 3rem 8%;
+      border-top: 1px solid rgba(245,239,230,0.06);
+      color: rgba(245,239,230,0.3);
+      font-size: 0.85rem;
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-bg"></div>
+    <div class="hero-top-bar"></div>
+    <div class="lanterns">
+      <div class="lantern"></div>
+      <div class="lantern"></div>
+      <div class="lantern"></div>
+      <div class="lantern"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-meta">25. Mai 2026 <span>·</span> Taipei <span>·</span> 22:00</p>
+      <h1>I'm turning<br><em>25!</em></h1>
+      <button class="hero-cta" onclick="scrollToInfo()">That's the Gameplan ↓</button>
+    </div>
+  </header>
+
+  <!-- WHAT -->
+  <section id="info">
+    <p class="section-label">The Plan</p>
+    <h2>What's Going On 🍻</h2>
+    <div class="info-grid">
+      <div class="info-tile">
+        <span class="info-tile-icon">🏠</span>
+        <p class="info-tile-label">Start</p>
+        <p class="info-tile-value">Party Olympics</p>
+      </div>
+      <div class="info-tile">
+        <span class="info-tile-icon">🕗</span>
+        <p class="info-tile-label">Game Start</p>
+        <p class="info-tile-value">22:00</p>
+      </div>
+      <div class="info-tile">
+        <span class="info-tile-icon">🍻</span>
+        <p class="info-tile-label">Riverside</p>
+        <p class="info-tile-value">Midnight</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME RULES -->
+  <section id="game">
+    <p class="section-label">The Event</p>
+    <h2>Taipei Party Olympics 🎉</h2>
+    <div class="card fade-up">
+      <p class="intro">Teams (3–5 persons) collect points through challenges. Completion proof can be done by photo / video evidence or having another team vouch for you. The winner team gets a small prize 👀🏆</p>
+      <h3>📌 Rules</h3>
+      <ul>
+        <li>Teams of 3–5 persons</li>
+        <li>Challenges can generally be completed once per team. Some can only be completed once overall.</li>
+        <li>Have fun & don't die</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section id="challenges">
+    <p class="section-label">The Challenges</p>
+    <h2>Let's Get It 🏋️</h2>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.5rem;">
+      <span class="pts pts-easy">Easy · 1–3 pts</span>
+      <span class="pts pts-med">Medium · 4–6 pts</span>
+      <span class="pts pts-hard">Hard · 7–9 pts</span>
+      <span class="pts pts-legend">Legend · 10 pts</span>
+    </div>
+
+    <div class="card fade-up">
+
+      <h3>🍺 Alcoholic Challenges</h3>
+      <ul>
+        <li><span class="li-text"><b>The Simple Things in Life</b> — Enjoy a beer. <i>Yes, you must look very enjoying doing that!</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>Everybody, Shots Shots, …</b> — Have a round of shots</span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text"><b>When in Rome…</b> — Ask someone for an alcoholic drink recommendation. Drink it. <i>You may not influence their suggestion.</i></span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Busdriver</b> — Play a round of the drinking game 'Bus Driver'</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Busdriver</b> — Play a round of [Taiwanese Drinking Game]</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Heavy-weight</b> — Empty a can of Strong Beer</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Friend or Foe?</b> — Find another team. Both teams secretly create a mixed drink for the other team. Exchange and decide: drink it for points, or don't. Your decision only affects your own team.</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Defiant</b> - Empty a beer can while riding a Ubike. <i>Note: If the police catches you doing that, you'll probably be fined. I won't be liable for that. Also don't do it at a place where you put yourself or others in danger.</i></span><span class="pts pts-hard">8 pts</span></li>
+        <li><span class="li-text"><b>Stay Healthy</b> — Buy a salad. Buy a beer. Mix them. Eat up.</span><span class="pts pts-legend">10 pts ★</span></li>    
+      </ul>
+
+      <h3>🚫🍺 Non-Alcoholic Challenges</h3>
+      <ul>
+        <li><span class="li-text"><b>Cheers to a Good Evening!</b> — Clink glasses with your whole team</span><span class="pts pts-easy">1 pt</span></li>
+        <li><span class="li-text"><b>Team Ready!</b> — Do a group photo</span><span class="pts pts-easy">1 pt</span></li>
+        <li><span class="li-text"><b>Discount Lover</b> — Buy something at a discount</span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>Good Boy</b> — Place Guai Guai on top of an electronic device (not your phone)</span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>KTV Enjoyer</b> — Sing something out loud!</span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text"><b>Retiree</b> — Do some Taiji at a park</span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text"><b>The Tizian</b> — Win something at a claw machine</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>I Am The Stampbook</b> — Get a stamp on your forehead. Any stamp is fine.</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Dance Monkey, Dance!</b> — Learn the [to be announced] dance</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Stinky Gang</b> — Buy some stinky tofu and eat it. Each team member must have bite.</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Language Enjoyer</b> — Ask a Taiwanese Person what Gāngjiāo is</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Ha-Ha-Ha-Ha</b> — Find another team. One member each fills mouth with water; the other team tries to make them laugh. Who laughs, loses. Only the winner gets points</span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>Just Exchange Student Things</b> — Give someone a kiss for at least 5 seconds</span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>KTV Lunatic</b> — Sing something out loud inside a convenience store! <i>Does not automatically count for KTV Enjoyer.</i></span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Spread Some Kindness</b> — Buy something for a convenience store worker!</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>King of Convenience Stores</b> — First team to buy from three of: 7-Eleven, FamilyMart, Hi-Life, OKmart</span><span class="pts pts-legend">10 pts ★</span></li>
+      </ul>
+
+      <h3>🤔 Quiz Time</h3>
+      <ul class="quiz-list">
+        <li><span class="li-text">What alcohol does Emil call <b>'Wurstwasser'</b>? <i>Hint: non-cooled alcohol section at the convenience store</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text">What is Emil's <b>favorite pastry</b>? <i>Hint: common in Taiwan, originates from somewhere else</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text">Where does Emil like to <b>go party</b>? <i>Hint: why do you need a hint? are we even friends??</i></span><span class="pts pts-easy">3 pts</span></li>
+      </ul>
+
+      <h3>🏆 Community Awards</h3>
+      <p style="color:rgba(245,239,230,0.6); font-size:0.88rem; margin-bottom:1rem;">Independent of the game — based on photos & videos from the night.</p>
+      <div class="awards-grid">
+        <div class="award-pill">🔥 Hardest Fit</div>
+        <div class="award-pill">👯 Best Group Picture</div>
+        <div class="award-pill">😂 Funniest Photo/Video</div>
+        <div class="award-pill">🤤 Best Snack Discovery</div>
+        <div class="award-pill">♥️ Cutest Couple</div>
+      </div>
+
+      <div class="finale-banner">
+        Finale: Big Round of Horserace at the Riverside!
+        Time: 00:00 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section>
+    <p class="section-label">Music</p>
+    <h2>Shared Playlist 🎶</h2>
+    <div class="card fade-up">
+      <p class="playlist-note">Song requests welcome — send them over 👀</p>
+      <!-- Link einfügen -->
+    </div>
+  </section>
+
+  <!-- GOOGLE DRIVE -->
+  <section>
+    <p class="section-label">Photos & Memories</p>
+    <h2>Google Drive 📸</h2>
+    <div class="card fade-up">
+      <p class="playlist-note">Link follows — upload your best shots here after the night.</p>
+      <!-- Link einfügen -->
+    </div>
+  </section>
+
+  <footer>
+    Emil's 25th · Taipei · 25.05.2026
+  </footer>
+
+  <script>
+    function scrollToInfo() {
+      document.getElementById("info").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Scroll-triggered fade-ins
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
