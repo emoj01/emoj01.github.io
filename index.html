@@ -143,8 +143,13 @@
 
     /* ── SECTIONS ────────────────────────────────────────── */
     section {
-      padding: 5rem 8%;
+      padding: 4rem 6%;
       border-top: 1px solid rgba(245,239,230,0.06);
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 2.5rem 5%; }
+      .hero-content { padding: 0 5% 3.5rem; }
     }
 
     .section-label {
@@ -183,7 +188,11 @@
       background: var(--dark-card);
       border: 1px solid rgba(245,239,230,0.08);
       border-radius: 16px;
-      padding: 2rem 2.5rem;
+      padding: 1.75rem 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 1.25rem 1.1rem; border-radius: 12px; }
     }
 
     .card p { color: rgba(245,239,230,0.8); margin-bottom: 0.5rem; }
@@ -192,9 +201,13 @@
     /* ── INFO GRID ───────────────────────────────────────── */
     .info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1rem;
       margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .info-tile {
@@ -233,10 +246,15 @@
     }
 
     li {
-      padding: 0.55rem 0;
+      padding: 0.65rem 0;
       color: rgba(245,239,230,0.82);
       border-bottom: 1px solid rgba(245,239,230,0.05);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 600px) {
+      li { font-size: 0.88rem; padding: 0.7rem 0; }
+      .pts { font-size: 0.7rem; padding: 2px 8px; }
     }
 
     li:last-child { border-bottom: none; }
@@ -252,6 +270,11 @@
     }
 
     /* ── AWARDS ──────────────────────────────────────────── */
+    .awards-note {
+      color: rgba(245,239,230,0.6);
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
     .awards-grid {
       display: flex;
       flex-wrap: wrap;
@@ -349,7 +372,7 @@
       <div class="lantern"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-meta">25. Mai 2026 <span>·</span> Taipei <span>·</span> 22:00</p>
+      <p class="hero-meta">25. Mai 2026 <span>·</span> Taipei <span>·</span> 21:30</p>
       <h1>I'm turning<br><em>25!</em></h1>
       <button class="hero-cta" onclick="scrollToInfo()">That's the Gameplan ↓</button>
     </div>
@@ -361,14 +384,14 @@
     <h2>What's Going On 🍻</h2>
     <div class="info-grid">
       <div class="info-tile">
-        <span class="info-tile-icon">🏠</span>
-        <p class="info-tile-label">Start</p>
-        <p class="info-tile-value">Party Olympics</p>
-      </div>
-      <div class="info-tile">
         <span class="info-tile-icon">🕗</span>
         <p class="info-tile-label">Game Start</p>
-        <p class="info-tile-value">22:00</p>
+        <p class="info-tile-value">21:30</p>
+      </div>
+      <div class="info-tile">
+        <span class="info-tile-icon">📍</span>
+        <p class="info-tile-label">Start</p>
+        <p class="info-tile-value">Ximending</p>
       </div>
       <div class="info-tile">
         <span class="info-tile-icon">🍻</span>
@@ -383,10 +406,10 @@
     <p class="section-label">The Event</p>
     <h2>Taipei Party Olympics 🎉</h2>
     <div class="card fade-up">
-      <p class="intro">Teams (3–5 persons) collect points through challenges. Completion proof can be done by photo / video evidence or having another team vouch for you. The winner team gets a small prize 👀🏆</p>
+      <p class="intro">Teams collect points through challenges. Proof of completion: photo/video evidence or having another team vouch for you. The winning team gets a small prize 👀🏆</p>
       <h3>📌 Rules</h3>
       <ul>
-        <li>Teams of 3–5 persons</li>
+        <li>Teams of 3–5 persons — fill out the Google Form at the bottom of the page. <i>Your team can have more members, but additional members won't be able to collect points or win a prize.</i></li>
         <li>Challenges can generally be completed once per team. Some can only be completed once overall.</li>
         <li>Have fun & don't die</li>
       </ul>
@@ -409,46 +432,60 @@
 
       <h3>🍺 Alcoholic Challenges</h3>
       <ul>
-        <li><span class="li-text"><b>The Simple Things in Life</b> — Enjoy a beer. <i>Yes, you must look very enjoying doing that!</i></span><span class="pts pts-easy">2 pts</span></li>
-        <li><span class="li-text"><b>Everybody, Shots Shots, …</b> — Have a round of shots</span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text"><b>The Simple Things in Life</b> — Enjoy a beer. <i>You must look very enjoying doing that! Can be completed up to 3 times.</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>Everybody, Shots Shots, …</b> — Have a round of shots.</span><span class="pts pts-easy">3 pts</span></li>
         <li><span class="li-text"><b>When in Rome…</b> — Ask someone for an alcoholic drink recommendation. Drink it. <i>You may not influence their suggestion.</i></span><span class="pts pts-med">4 pts</span></li>
-        <li><span class="li-text"><b>Busdriver</b> — Play a round of the drinking game 'Bus Driver'</span><span class="pts pts-med">5 pts</span></li>
-        <li><span class="li-text"><b>Busdriver</b> — Play a round of [Taiwanese Drinking Game]</span><span class="pts pts-med">5 pts</span></li>
-        <li><span class="li-text"><b>Heavy-weight</b> — Empty a can of Strong Beer</span><span class="pts pts-med">5 pts</span></li>
-        <li><span class="li-text"><b>Friend or Foe?</b> — Find another team. Both teams secretly create a mixed drink for the other team. Exchange and decide: drink it for points, or don't. Your decision only affects your own team.</span><span class="pts pts-hard">7 pts</span></li>
-        <li><span class="li-text"><b>Defiant</b> - Empty a beer can while riding a Ubike. <i>Note: If the police catches you doing that, you'll probably be fined. I won't be liable for that. Also don't do it at a place where you put yourself or others in danger.</i></span><span class="pts pts-hard">8 pts</span></li>
-        <li><span class="li-text"><b>Stay Healthy</b> — Buy a salad. Buy a beer. Mix them. Eat up.</span><span class="pts pts-legend">10 pts ★</span></li>    
+        <li><span class="li-text"><b>Heavy-weight</b> — Empty a can of strong beer.</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Horse Race</b> — Challenge another team. 2 members per team participate: one is the rider, one is the horse. The rider jumps onto the horse's back and you race to a destination of your choice. You must empty a drink before arriving — but as a responsible rider, you cannot drink while the horse is moving. <i>Up to 8 points can be earned.</i></span><span class="pts pts-med">+4 / −2 pts</span></li>
+        <li><span class="li-text"><b>Busdriver</b> — Play a round of the drinking game "Bus Driver".</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>The Lion Drinks Tonight</b> — One teammate empties a drink while the rest sing "The Lion Sleeps Tonight".</span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>Friend or Foe?</b> — Find another team. Both teams secretly mix a drink for the other. Exchange and decide: drink it for points, or don't. Your decision only affects your own team.</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>What Are They Doing?</b> — 4-person challenge. One person holds your arms, one holds your legs, and the 4th person pours alcohol into your mouth.</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Upside-Down</b> — Have a drink while being upside down. You'll figure out how.</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Stand United</b> — Get a stranger to join you for at least one drink.</span><span class="pts pts-legend">10 pts ★</span></li>
+        <li><span class="li-text"><b>Stay Healthy</b> — Buy a salad. Buy a beer. Mix them. Eat up.</span><span class="pts pts-legend">10 pts ★</span></li>
       </ul>
 
       <h3>🚫🍺 Non-Alcoholic Challenges</h3>
       <ul>
-        <li><span class="li-text"><b>Cheers to a Good Evening!</b> — Clink glasses with your whole team</span><span class="pts pts-easy">1 pt</span></li>
-        <li><span class="li-text"><b>Team Ready!</b> — Do a group photo</span><span class="pts pts-easy">1 pt</span></li>
-        <li><span class="li-text"><b>Discount Lover</b> — Buy something at a discount</span><span class="pts pts-easy">2 pts</span></li>
-        <li><span class="li-text"><b>Good Boy</b> — Place Guai Guai on top of an electronic device (not your phone)</span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>Cheers to a Good Evening!</b> — Clink glasses with your whole team.</span><span class="pts pts-easy">1 pt</span></li>
+        <li><span class="li-text"><b>Team Ready!</b> — Take a group photo.</span><span class="pts pts-easy">1 pt</span></li>
+        <li><span class="li-text"><b>Best Snack</b> — Find "Taiwan's Nr.1 Snack".</span><span class="pts pts-easy">1 pt</span></li>
+        <li><span class="li-text"><b>Discount Lover</b> — Buy something at a discount.</span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text"><b>Good Boy</b> — Place Guai Guai on top of an electronic device (not your phone).</span><span class="pts pts-easy">2 pts</span></li>
         <li><span class="li-text"><b>KTV Enjoyer</b> — Sing something out loud!</span><span class="pts pts-easy">3 pts</span></li>
-        <li><span class="li-text"><b>Retiree</b> — Do some Taiji at a park</span><span class="pts pts-easy">3 pts</span></li>
-        <li><span class="li-text"><b>The Tizian</b> — Win something at a claw machine</span><span class="pts pts-med">4 pts</span></li>
-        <li><span class="li-text"><b>I Am The Stampbook</b> — Get a stamp on your forehead. Any stamp is fine.</span><span class="pts pts-med">4 pts</span></li>
-        <li><span class="li-text"><b>Dance Monkey, Dance!</b> — Learn the [to be announced] dance</span><span class="pts pts-med">4 pts</span></li>
-        <li><span class="li-text"><b>Stinky Gang</b> — Buy some stinky tofu and eat it. Each team member must have bite.</span><span class="pts pts-med">4 pts</span></li>
-        <li><span class="li-text"><b>Language Enjoyer</b> — Ask a Taiwanese Person what Gāngjiāo is</span><span class="pts pts-med">5 pts</span></li>
-        <li><span class="li-text"><b>Ha-Ha-Ha-Ha</b> — Find another team. One member each fills mouth with water; the other team tries to make them laugh. Who laughs, loses. Only the winner gets points</span><span class="pts pts-med">6 pts</span></li>
-        <li><span class="li-text"><b>Just Exchange Student Things</b> — Give someone a kiss for at least 5 seconds</span><span class="pts pts-med">6 pts</span></li>
-        <li><span class="li-text"><b>KTV Lunatic</b> — Sing something out loud inside a convenience store! <i>Does not automatically count for KTV Enjoyer.</i></span><span class="pts pts-hard">7 pts</span></li>
-        <li><span class="li-text"><b>Spread Some Kindness</b> — Buy something for a convenience store worker!</span><span class="pts pts-hard">7 pts</span></li>
-        <li><span class="li-text"><b>King of Convenience Stores</b> — First team to buy from three of: 7-Eleven, FamilyMart, Hi-Life, OKmart</span><span class="pts pts-legend">10 pts ★</span></li>
+        <li><span class="li-text"><b>Retiree</b> — Practice some Taiji.</span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text"><b>The Tizian</b> — Win something at a claw machine. <i>Can be completed up to 2 times.</i></span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Spread Some Love</b> — Give someone outside your team a hug.</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Dance Monkey, Dance!</b> — Do a dance in public. <i>There needs to be music — either from your phone or your teammates making the sound effects.</i></span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Stinky Gang</b> — Buy some stinky tofu and eat it. Every team member must have a bite.</span><span class="pts pts-med">4 pts</span></li>
+        <li><span class="li-text"><b>Language Enjoyer</b> — Ask a Taiwanese person what Gāngjiāo is.</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Playboy / Playgirl</b> — Have two people kiss you on the cheeks at the same time.</span><span class="pts pts-med">5 pts</span></li>
+        <li><span class="li-text"><b>Ha-Ha-Ha-Ha</b> — Find another team. One member each fills their mouth with water; the other team tries to make them laugh. Whoever laughs first, loses. Only the winner gets points. <i>Up to 10 points can be earned.</i></span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>Just Exchange Student Things</b> — Give someone a passionate kiss. <i>Consensually, ofc.</i></span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>Boba Addict</b> — Be the first team to buy a bubble tea. <i>Only the first team gets points for this one.</i></span><span class="pts pts-med">6 pts</span></li>
+        <li><span class="li-text"><b>I Am The Stampbook</b> — Get a stamp on your forehead. Any stamp counts.</span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>KTV Lunatic</b> — Sing something out loud inside a convenience store. <i>Does not automatically count for KTV Enjoyer.</i></span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Comedian</b> — Make a stranger laugh. <i>Can be completed twice.</i></span><span class="pts pts-hard">7 pts</span></li>
+        <li><span class="li-text"><b>Spread Some Kindness</b> — Buy something for a convenience store worker.</span><span class="pts pts-hard">8 pts</span></li>
+        <li><span class="li-text"><b>King of Convenience Stores</b> — First team to buy from three of: 7-Eleven, FamilyMart, Hi-Life, OKmart.</span><span class="pts pts-legend">10 pts ★</span></li>
+        <li><span class="li-text"><b>Twerk-a-holic</b> — Do some wall twerking in 3 different places.</span><span class="pts pts-legend">10 pts ★</span></li>
+      </ul>
+      <h3>⚡ Other Challenges</h3>
+      <ul class="quiz-list">
+        <li><span class="li-text"><b>6-7</b> — If you spot another team and do the 6-7 gesture, at least one of their members must join in. Otherwise they lose 1 point.</span><span class="pts pts-easy">0 / −1 pt</span></li>
+        <li><span class="li-text"><b>Apes Together Strong</b> — If you spot another team and make monkey noises, at least one of their members must join in. Otherwise they lose 2 points.</span><span class="pts pts-easy">0 / −2 pts</span></li>
       </ul>
 
       <h3>🤔 Quiz Time</h3>
       <ul class="quiz-list">
-        <li><span class="li-text">What alcohol does Emil call <b>'Wurstwasser'</b>? <i>Hint: non-cooled alcohol section at the convenience store</i></span><span class="pts pts-easy">2 pts</span></li>
-        <li><span class="li-text">What is Emil's <b>favorite pastry</b>? <i>Hint: common in Taiwan, originates from somewhere else</i></span><span class="pts pts-easy">2 pts</span></li>
-        <li><span class="li-text">Where does Emil like to <b>go party</b>? <i>Hint: why do you need a hint? are we even friends??</i></span><span class="pts pts-easy">3 pts</span></li>
+        <li><span class="li-text">Where does Emil like to <b>go party</b>? <i>Hint: why do you need a hint? are we even friends??</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text">What is Emil's <b>favorite pastry</b>? <i>Hint: common in Taiwan, originates from somewhere else.</i></span><span class="pts pts-easy">2 pts</span></li>
+        <li><span class="li-text">What alcohol does Emil call <b>"Wurstwasser"</b>? <i>Hint: check the non-cooled alcohol section at the convenience store.</i></span><span class="pts pts-easy">2 pts</span></li>
       </ul>
 
       <h3>🏆 Community Awards</h3>
-      <p style="color:rgba(245,239,230,0.6); font-size:0.88rem; margin-bottom:1rem;">Independent of the game — based on photos & videos from the night.</p>
+      <p class="awards-note">Independent of the game — awarded based on photos & videos from the night.</p>
       <div class="awards-grid">
         <div class="award-pill">🔥 Hardest Fit</div>
         <div class="award-pill">👯 Best Group Picture</div>
@@ -458,8 +495,7 @@
       </div>
 
       <div class="finale-banner">
-        Finale: Big Round of Horserace at the Riverside!
-        Time: 00:00 
+        🏁 Finale: Big Round of Horse Race at the Riverside — 00:00
       </div>
 
     </div>
@@ -470,8 +506,7 @@
     <p class="section-label">Music</p>
     <h2>Shared Playlist 🎶</h2>
     <div class="card fade-up">
-      <p class="playlist-note">Song requests welcome — send them over 👀</p>
-      <!-- Link einfügen -->
+      <a href="https://open.spotify.com/socialsession/0PucCmw7Zbmm4HPqMRpdvu?si=cuMkXLqeS5etRaA7BlboyA&utm_source=share-options-sheet&utm_medium=share-link">Song requests welcome — send them over 👀</a>
     </div>
   </section>
 
@@ -480,8 +515,15 @@
     <p class="section-label">Photos & Memories</p>
     <h2>Google Drive 📸</h2>
     <div class="card fade-up">
-      <p class="playlist-note">Link follows — upload your best shots here after the night.</p>
-      <!-- Link einfügen -->
+      <p class="playlist-note">Upload your best shots here or send them to me trhough WhatsApp/Instagram after the night.</p>
+      <a href="https://drive.google.com/drive/folders/1pjJhj9V3Q-9It59GME2xC8AOAPb_VgZR?usp=sharing">Google Drive</a>
+    </div>
+  </section>
+  <section>
+    <p class="section-label">Sign up your team!</p>
+    <h2>Team Form 📃</h2>
+    <div class="card fade-up">
+      <a href="https://forms.gle/FzptxJnYBRPZZ4227">Sign up your team here!</a>
     </div>
   </section>
 
